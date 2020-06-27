@@ -245,15 +245,19 @@ var style = {
 // // // For tables
 // //
 //
-const thArray = ["ID", "Name", "Salary", "Country", "City"];
+const thArray = ["Priority", "Condition", "Time to failure", "Probability", "Time to Repair"];
 const tdArray = [
-  ["1", "Dakota Rice", "$36,738", "Niger", "Oud-Turnhout"],
-  ["2", "Minerva Hooper", "$23,789", "Curaçao", "Sinaai-Waas"],
-  ["3", "Sage Rodriguez", "$56,142", "Netherlands", "Baileux"],
-  ["4", "Philip Chaney", "$38,735", "Korea, South", "Overland Park"],
-  ["5", "Doris Greene", "$63,542", "Malawi", "Feldkirchen in Kärnten"],
-  ["6", "Mason Porter", "$78,615", "Chile", "Gloucester"]
+  ["Yes","1", "Dakota Rice", "$36,738", "Niger", "Oud-Turnhout"],
+  ["No","2", "Minerva Hooper", "$23,789", "Curaçao", "Sinaai-Waas"],
+  ["Yes","3", "Sage Rodriguez", "$56,142", "Netherlands", "Baileux"],
+  ["No","4", "Philip Chaney", "$38,735", "Korea, South", "Overland Park"],
+  ["No","5", "Doris Greene", "$63,542", "Malawi", "Feldkirchen in Kärnten"],
+  ["NO","6", "Mason Porter", "$78,615", "Chile", "Gloucester"]
 ];
+const td1Array=["P0","CRITICAL","16 Days","80%","11 Days"]
+
+const th1Array=["3/6","Rnk","Sensor name","","Last reading","Upper limit","Last Anomaly","Avg Duration"]
+
 
 //
 // //
@@ -577,9 +581,14 @@ var legendBar = {
   types: ["info", "danger"]
 };
 
+var ts1Array=["","","Location","Units","Time","Lower limit","Time","No.in 7 days"]
+
 module.exports = {
   style, // For notifications (App container and Notifications view)
   thArray,
+  ts1Array,
+  th1Array,
+  td1Array,
   tdArray, // For tables (TableList view)
   iconsArray, // For icons (Icons view)
   dataPie,

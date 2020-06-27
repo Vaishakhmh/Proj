@@ -3,7 +3,8 @@ import React, { Component } from "react";
 import { Grid, Row, Col, Table } from "react-bootstrap";
 
 import Card from "components/Card/Card.jsx";
-import { thArray, tdArray } from "variables/Variables.jsx";
+import { th1Array, tdArray ,ts1Array} from "variables/Variables.jsx";
+import Checkbox from "components/CustomCheckbox/CustomCheckbox.jsx";
 
 class TableList extends Component {
   render() {
@@ -18,11 +19,18 @@ class TableList extends Component {
                 ctTableFullWidth
                 ctTableResponsive
                 content={
-                  <Table striped hover>
+                  <Table >
                     <thead>
                       <tr>
-                        {thArray.map((prop, key) => {
+                        {th1Array.map((prop, key) => {
                           return <th key={key}>{prop}</th>;
+                        })}
+                      </tr>
+                    </thead>
+                    <thead>
+                      <tr>
+                        {ts1Array.map((prop,key)=>{
+                          return <th key={key}></th>
                         })}
                       </tr>
                     </thead>
@@ -31,7 +39,9 @@ class TableList extends Component {
                         return (
                           <tr key={key}>
                             {prop.map((prop, key) => {
-                              return <td key={key}>{prop}</td>;
+                              return(    
+                                 <td key={key}>{prop}</td>
+                              )
                             })}
                           </tr>
                         );
@@ -53,7 +63,7 @@ class TableList extends Component {
                   <Table hover>
                     <thead>
                       <tr>
-                        {thArray.map((prop, key) => {
+                        {th1Array.map((prop, key) => {
                           return <th key={key}>{prop}</th>;
                         })}
                       </tr>
@@ -78,6 +88,7 @@ class TableList extends Component {
       </div>
     );
   }
-}
+  }
+
 
 export default TableList;
