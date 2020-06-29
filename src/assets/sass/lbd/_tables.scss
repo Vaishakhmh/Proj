@@ -5,6 +5,7 @@
         position: relative;
         height: 20px;
         display: block;
+        margin-left: 10px;
         width: 20px;
         padding: 0px 0px;
         margin: 0px 5px;
@@ -14,6 +15,12 @@
             left: 5px;
         }
    }
+   .table-hover tbody tr:hover td {
+    background: aqua;
+}
+.table-hover thead tr:hover th, .table-hover tbody tr:hover td {
+    background-color: #D1D119;
+}
    > thead > tr > th,
    > tbody > tr > th,
    > tfoot > tr > th,
@@ -23,21 +30,23 @@
        padding: 12px 8px;
        vertical-align: middle;
    }
-   // MANU : aici este ceva schimbat!!!
    > tbody > tr > td{
        font-size: 14px;
+       border: 0px;
    }
     > thead > tr > th{
-        border-bottom-width: 1px;
-        font-size: $font-size-small;
-        text-transform: uppercase;
-        color: $dark-gray;
-        font-weight: $font-weight-normal;
-        padding-bottom: 5px;
-    }
+       // border-bottom-width: 0px;
+        border:0px;
 
+        font-size: 16px;
+      //  text-transform: uppercase;
+        color: #ffffff;
+        font-weight: lighter;
+        padding-bottom: 5px;
+        background-color: #2a3c46;
+    }
+   
    .td-actions .btn{
-        @include opacity(0.36);
 
         &.btn-xs{
             padding-left: 3px;
@@ -48,13 +57,43 @@
         min-width: 90px;
     }
 
+
     > tbody > tr{
         position: relative;
+        background-color: #081d28;
+        color:#ffffff;
 
         &:hover{
             .td-actions .btn{
-                @include opacity(1);
+                background-color: #1b394b;
             }
         }
     }
+}
+
+.trf{
+    border-bottom: 1px solid #2c94f2;
+    color: #ffffff;
+    margin-bottom: 20px;
+    margin-top: -25px !important;
+}
+.the{
+    font-size: 12px !important;
+    color: #ffffff;
+          text-transform: uppercase;
+
+}
+.subtitle{
+    font-weight: lighter !important;
+    color:gray !important;
+}
+
+.thh{
+    background-color: #1a2b34 !important;
+    font-weight: lighter !important;
+   // width: 1200px;
+}
+.thd{
+    background-color: #1a2b34 !important;
+    font-size: 20px !important;
 }

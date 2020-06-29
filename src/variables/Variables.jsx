@@ -245,16 +245,22 @@ var style = {
 // // // For tables
 // //
 //
-const thArray = ["Priority", "Condition", "Time to failure", "Probability", "Time to Repair"];
+const thArray = ["Priority", "Condition", "Time to failure", "Probability", "Time to Repair","","",""];
+
 const tdArray = [
-  ["Yes","1", "Dakota Rice", "$36,738", "Niger", "Oud-Turnhout"],
-  ["No","2", "Minerva Hooper", "$23,789", "Curaçao", "Sinaai-Waas"],
-  ["Yes","3", "Sage Rodriguez", "$56,142", "Netherlands", "Baileux"],
-  ["No","4", "Philip Chaney", "$38,735", "Korea, South", "Overland Park"],
-  ["No","5", "Doris Greene", "$63,542", "Malawi", "Feldkirchen in Kärnten"],
-  ["NO","6", "Mason Porter", "$78,615", "Chile", "Gloucester"]
+  ["Yes","1", "Static Pressure at pump Outlet", "","107.0054", "100.0000", "813 mins",""],["","","Pump5/Drivetrain","bar'17","Jan30,8:44","69.4460","17 Jan 30",""],
+  ["Yes","2", "Static Pressure at pump Outlet", "","107.0054", "100.0000", "813 mins",""],["","","Pump5/Drivetrain","bar'17","Jan30,8:44","69.4460","17 Jan 30",""],
+  ["No","3", "Static Pressure at pump Outlet", "","107.0054", "100.0000", "813 mins",""],["","","Pump5/Drivetrain","bar'17","Jan30,8:44","69.4460","17 Jan 30",""],
 ];
-const td1Array=["P0","CRITICAL","16 Days","80%","11 Days"]
+
+
+const td2Array=[
+  ["","","Pump5/Drivetrain","bar'17","Jan30,8:44","69.4460","17 Jan 30"],
+  ["","","Pump5/Drivetrain","bar'17","Jan30,8:44","69.4460","17 Jan 30"],
+  ["","","Pump5/Drivetrain","bar'17","Jan30,8:44","69.4460","17 Jan 30"],
+]
+
+const td1Array=["P0","CRITICAL","16 Days","80%","11 Days","","",""]
 
 const th1Array=["3/6","Rnk","Sensor name","","Last reading","Upper limit","Last Anomaly","Avg Duration"]
 
@@ -587,6 +593,7 @@ module.exports = {
   style, // For notifications (App container and Notifications view)
   thArray,
   ts1Array,
+  td2Array,
   th1Array,
   td1Array,
   tdArray, // For tables (TableList view)

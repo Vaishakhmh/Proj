@@ -1,7 +1,9 @@
 
 import React, { Component } from "react";
 import ChartistGraph from "react-chartist";
-import { Grid, Row, Col } from "react-bootstrap";
+import { Grid, Row, Col,Table } from "react-bootstrap";
+import { th1Array, tdArray ,ts1Array,td2Array,td1Array,thArray} from "variables/Variables.jsx";
+import Checkbox from "components/CustomCheckbox/CustomCheckbox.jsx";
 
 import { Card } from "components/Card/Card.jsx";
 import { Tasks } from "components/Tasks/Tasks.jsx";
@@ -53,22 +55,68 @@ class Dashboard extends Component {
             </Col>
           </Row>
           <Row>
-            <Col md={10}>
-              <Card
-                title="Tasks"
-                category="Backend development"
-                stats="Updated 3 minutes ago"
-                statsIcon="fa fa-history"
-                content={
-                  <div className="table-full-width">
-                    <table className="table">
-                      <Tasks />
-                    </table>
-                  </div>
+            <Col md={12}>
+              <div>
+                  <Table >
+                    <thead >
+                      <tr>
+                      {thArray.map((prop, key) => {
+                          return <th className="thh" key={key}>{prop}</th>;
+                        })}                    
+                      </tr>
+                        <tr>
+                          {td1Array.map((prop,key)=>{
+                            return <th className="thd" key={key}>{prop}</th>
+                          })}
+                        </tr>
+                    </thead>
+                    <thead>
+                      <tr>
+                        {th1Array.map((prop, key) => {
+                          return <th key={key}>{prop}</th>;
+                        })}
+                      </tr>
+                    </thead>
+                    <thead className="trf">
+                      <tr>
+                        {ts1Array.map((prop,key)=>{
+                          return <th className="the" key={key}>{prop}</th>
+                        })}
+                      </tr>
+                    </thead>
+                     <tbody>
+                      {tdArray.map((prop, key1) => {
+                        return (
+                          <tr key={key1}>
+                            {prop.map((prop, key) => {
+                              if(key==0&&key1%2==0)
+                              return( <Checkbox
+                                isChecked={prop === "Yes"?true : false}
+                              />
+                              )
+                              else if(key1%2==1)
+                              {
+                                return(
+                                  <td style={{color:"gray",borderBottom:"1px solid white"}} key={key}>{prop}</td>
+                               )
+                              }
+                              else 
+                              return(
+                                  <td key={key}>{prop}</td>
+                               )
+                               })}      
+                          </tr>
+                        );
+                      })}
+                    </tbody> 
+                  </Table>
                 }
               />
+              </div>
+
             </Col>
           </Row>
+          
         </Grid>
       </div>
     );
